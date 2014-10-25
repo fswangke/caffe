@@ -12,6 +12,9 @@ find_package(GFlags REQUIRED)
 include_directories(${GFLAGS_INCLUDE_DIRS})
 
 #   BLAS
+find_package(CBLAS REQUIRED)
+include_directories(${CBLAS_INCLUDE_DIR})
+set(BLAS_LIBRARIES ${CBLAS_LIBRARIES})
 if(BLAS STREQUAL "atlas")
 
     find_package(Atlas REQUIRED)
